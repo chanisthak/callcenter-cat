@@ -16,7 +16,6 @@ export class LoginComponent {
     const password = form.value.password;
 
     // Display an alert with the entered username and password.
-    window.alert(`Username: ${username}, Password: ${password}`);
     if (form.valid) {
       // Your form is valid, you can perform any additional logic here.
       // For now, simply navigate to the "Home" component.

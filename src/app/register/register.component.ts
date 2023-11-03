@@ -46,6 +46,13 @@ export class RegisterComponent {
     }, { validators: this.matchPassword }); // Use the custom validator here
   }
 
+  jobOptions = [
+    { value: 'doctor', label: 'หมอ' },
+    { value: 'nurse', label: 'พยาบาล' },
+    { value: 'teacher', label: 'คุณครู' },
+    { value: 'police', label: 'ตำรวจ' },
+  ];
+
   ngOnInit() {
     this.userForm.get('dateOfBirth')?.valueChanges.subscribe((dateOfBirth) => {
       this.calculateAge(dateOfBirth);
@@ -81,6 +88,7 @@ export class RegisterComponent {
     password: '',
     confirmPassword: '',
     dateOfBirth: '',
+    age: 0,
     job: '',
   };
 
@@ -91,7 +99,8 @@ export class RegisterComponent {
       email: this.userForm.get('email')?.value || '',
       password: this.userForm.get('password')?.value || '',
       confirmPassword: this.userForm.get('confirmPassword')?.value || '',
-      dateOfBirth: this.userForm.get('confirmPassword')?.value || '',
+      dateOfBirth: this.userForm.get('dateOfBirth')?.value || '',
+      age: this.userForm.get('age')?.value || '',
       job: this.userForm.get('confirmPassword')?.value || '',
       // Add other form values here
     };
