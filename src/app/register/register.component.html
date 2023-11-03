@@ -1,0 +1,104 @@
+<div class="w-full max-w-4xl mx-auto">
+  
+    <form [formGroup]="userForm" (ngSubmit)="onSubmit()" class="w-full bg-white -md rounded-lg px-8 py-6">
+      <div class="w-full flex justify-center mb-5">
+        <img src="../assets/cat-callcenter.png" class="w-20 rounded"> 
+      </div>
+      <div class="mb-6">
+        <div class="flex justify-between items-center mb-7">
+          <div class="w-6/12 pr-2 ">
+            <label class="block text-gray-700 text-sm font-bold mb-2">First Name</label>
+              <input
+                type="text"
+                formControlName="firstName"
+                class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight"
+                placeholder="First Name"
+              />
+              <div class="text-red-500 text-xs mt-1 absolute" appFormValidateMsg [control]="userForm.get('firstName')"></div>
+          </div>
+          <div class="w-6/12 pl-2">
+            <label class="block text-gray-700 text-sm font-bold mb-2">Last Name</label>
+            <input
+                type="text"
+                formControlName="lastName"
+                class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight"
+                placeholder="Last Name"
+              />
+            <div class="text-red-500 text-xs mt-1 absolute" appFormValidateMsg [control]="userForm.get('lastName')"></div>
+          </div>
+        </div>
+        <div class="flex justify-between items-center mb-7">
+          <div class="w-full pr-2">
+            <label class="block text-gray-700 text-sm font-bold mb-2">Email</label>
+              <input
+                type="text"
+                formControlName="email"
+                class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight"
+                placeholder="test@test.co"
+              />
+              <div class="text-red-500 text-xs mt-1 absolute" appFormValidateMsg [control]="userForm.get('email')"></div>
+          </div>
+        </div>
+        <div class="flex justify-between items-center mb-7">
+          <div class="w-6/12 pr-2">
+            <label class="block text-gray-700 text-sm font-bold mb-2">Password</label>
+              <input
+                type="password"
+                formControlName="password"
+                class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight"
+                placeholder="Password"
+              />
+              <div class="text-red-500 text-xs mt-1 absolute" appFormValidateMsg [control]="userForm.get('password')"></div>
+          </div>
+          <div class="w-6/12 pr-2">
+            <label class="block text-gray-700 text-sm font-bold mb-2">Confirm Password</label>
+              <input
+                type="password"
+                formControlName="confirmPassword"
+                class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight"
+                placeholder="Confirm Password"
+              />
+             <div *ngIf="userForm.hasError('passwordMismatch') && userForm.get('confirmPassword')?.touched" class="text-red-500 text-xs mt-1 absolute">
+                Passwords do not match
+              </div>
+              <div class="text-red-500 text-xs mt-1 absolute" appFormValidateMsg [control]="userForm.get('confirmPassword')"></div>
+          </div>
+        </div>
+        <div class="flex justify-between items-center mb-7">
+  <div class="w-5/12 pr-2">
+    <label class="block text-gray-700 text-sm font-bold mb-2">Date of Birth</label>
+    <input
+      type="date"
+      formControlName="dateOfBirth"
+      class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight"
+      placeholder="Date of Birth"
+    />
+    <div class="text-red-500 text-xs mt-1 absolute" appFormValidateMsg [control]="userForm.get('dateOfBirth')"></div>
+  </div>
+  <div class="w-1/12 pr-2">
+    <label class="block text-gray-700 text-sm font-bold mb-2">Age</label>
+    <input
+      type="text"
+      formControlName="age"
+      class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight cursor-default bg-slate-200"
+      placeholder="Age"
+      readonly
+    />
+  </div>
+  <div class="w-6/12 pr-2">
+    <label class="block text-gray-700 text-sm font-bold mb-2">Job</label>
+    <select formControlName="job" class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight">
+      <option value="job1">Job 1</option>
+      <option value="job2">Job 2</option>
+      <option value="job3">Job 3</option>
+    </select>
+  </div>
+</div>
+
+      </div>
+      <div class="mt-9 flex flex-col items-center border-t-2 border-zinc-200 pt-5">
+        <button type="submit" [disabled]="userForm.invalid" class="btn-sign-up">Sign Up</button>
+      </div>
+    </form>
+  </div>
+  

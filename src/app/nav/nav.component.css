@@ -1,0 +1,15 @@
+.profile-menu-detail a:hover {
+    background-color: rgb(238, 238, 238);
+    transition:.2s ease;
+}
+.profile-menu-detail {
+    visibility: hidden;
+    opacity: 0;
+}
+
+.profile-menu:hover .profile-menu-detail{
+    display: block ;
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(2);
+  }
