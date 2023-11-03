@@ -51,6 +51,7 @@ export class RegisterComponent {
     { value: 'nurse', label: 'พยาบาล' },
     { value: 'teacher', label: 'คุณครู' },
     { value: 'police', label: 'ตำรวจ' },
+    { value: 'programmer', label: 'โปรแกรมเมอร์' },
   ];
 
   ngOnInit() {
@@ -101,7 +102,7 @@ export class RegisterComponent {
       confirmPassword: this.userForm.get('confirmPassword')?.value || '',
       dateOfBirth: this.userForm.get('dateOfBirth')?.value || '',
       age: this.userForm.get('age')?.value || '',
-      job: this.userForm.get('confirmPassword')?.value || '',
+      job: this.userForm.get('job')?.value || '',
       // Add other form values here
     };
     this.userService.setUser(this.user);
