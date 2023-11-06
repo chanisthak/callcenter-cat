@@ -88,7 +88,8 @@
   <div class="w-6/12 pr-2 ">
     <label class="block text-gray-700 text-sm font-bold mb-2">Job</label>
     <div class="relative">
-    <select formControlName="job" class=" appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight">
+    <select  name="job" class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight">
+    <option [value]="">-- กรุณาเลือก --</option>
       <option *ngFor="let job of jobOptions" [value]="job.value">{{ job.label }}</option>
     </select>
     <i class="fa fa-caret-down absolute right-0 top-0 mt-3 mr-3"></i>

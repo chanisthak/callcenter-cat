@@ -1,6 +1,12 @@
 <div class="container mx-auto flex items-start grid justify-items-center">
-  <div class="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow">
-    <h2 class="subpixel-antialiased text-xl text-sky-600 border-b-4 border-indigo-500 mb-5 pb-3">Welcome to Home Page</h2>
+  <div class="block w-7/12 p-6 bg-white border border-gray-200 rounded-lg shadow">
+    <div class="flex justify-between  border-b-4 border-indigo-500 pb-3 mb-5">
+      <h2 class="subpixel-antialiased text-xl text-sky-600  flex items-center ">Home</h2>
+      <a href="/edit" class="bg-yellow-500 ease-in duration-100 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline hover:bg-yellow-600"
+        ><i class="fa fa-edit mr-2"></i> Edit</a>
+    </div>
+    
+    
     <p>First Name: {{ userData.firstName }}</p>
     <p>Last Name: {{ userData.lastName }}</p>
     <p>Email: {{ userData.email }}</p>
@@ -8,6 +14,8 @@
     <p>Date of Birth: {{ userData.dateOfBirth | date:'yyyy, dd MMM' }}</p>
     <p>Age: {{ userData.age}}</p>
     <p>Job: {{ userData.job }}</p>
+
+    
   </div>
   <!-- Display other user data fields as needed -->
 </div>

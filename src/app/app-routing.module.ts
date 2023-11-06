@@ -10,6 +10,7 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'about', component: AboutComponent },
   { path: 'register', component: RegisterComponent },
+  { path: 'edit', component: RegisterComponent },
   // Add more routes as needed
   { path: '', redirectTo: '/register', pathMatch: 'full' },
   { path: '**', redirectTo: '/register' },
