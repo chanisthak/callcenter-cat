@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { UserService } from '../user.service';
 import { Router } from '@angular/router';
@@ -10,25 +10,12 @@ import { Router } from '@angular/router';
 })
 
 export class RegisterComponent {
-  // @Input() userData: any;
-
   userForm: FormGroup;
-
-  user = {
-    firstName: '',
-    lastName: '',
-    email: '',
-    password: '',
-    confirmPassword: '',
-    dateOfBirth: '',
-    age: 0,
-    job: '',
-  };
+  userData: any;
 
   constructor(private userService: UserService, private router: Router, private formBuilder: FormBuilder) {
-    // if (this.userService.getUser()!=null) {
-    //     this.userData = this.userService.getUser();
-    // }
+    this.userData = this.userService.getUser();
+    
     this.userForm = this.formBuilder.group({
       firstName: ['', [
         Validators.required,
@@ -98,7 +85,16 @@ export class RegisterComponent {
     }
   }
 
-  
+  user = {
+    firstName: '',
+    lastName: '',
+    email: '',
+    password: '',
+    confirmPassword: '',
+    dateOfBirth: '',
+    age: 0,
+    job: '',
+  };
 
   onSubmit() {
     this.user = {
